@@ -21,3 +21,11 @@ class TestBinaryTree(unittest.TestCase):
         self.assertEqual(bh.size(), 1)
         self.assertEqual(bh.pop(), 1)
         self.assertEqual(bh.size(), 0)
+
+    def test_binary_heap_max(self):
+        bh = BinaryHeap()
+        bh.push(1)
+        bh.push(3)
+        bh.push(2)
+        self.assertEqual(bh.max(), 3)
+        self.assertEqual(bh.size(), 3)

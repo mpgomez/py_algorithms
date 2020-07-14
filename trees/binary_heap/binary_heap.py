@@ -21,6 +21,9 @@ class BinaryHeap:
         self.sink(1)
         return max
 
+    def max(self):
+        return self.bh[1]
+
     def _len(self):
         return len(self.bh)
 
