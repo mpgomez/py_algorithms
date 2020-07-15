@@ -9,41 +9,41 @@ class BinaryHeap:
     def push(self, item):
         # We need to ignore the first item so we don't mess up the calculations.
         # The first item gets inserted twice, and the 0 position, ignored.
-        if self._len() == 0:
+        if self.__len() == 0:
             self.bh.append(item)
         self.bh.append(item)
-        self.swim(self._len() - 1)
+        self.__swim(self.__len() - 1)
 
     def pop(self):
-        max = self.bh[1]
-        self.exchange(1, self._len() - 1)
+        max_item = self.bh[1]
+        self.__exchange(1, self.__len() - 1)
         self.bh.pop()
-        self.sink(1)
-        return max
+        self.__sink(1)
+        return max_item
 
     def max(self):
         return self.bh[1]
 
-    def _len(self):
-        return len(self.bh)
-
     def size(self):
         # One less, as we ignore the first item
-        if self._len() == 0:
+        if self.__len() == 0:
             return 0
-        return self._len() - 1
+        return self.__len() - 1
 
-    def sink(self, position):
-        while position*2 < self._len() and self.bh[position] < self.bh[position * 2]:
-            self.exchange(position, position*2)
+    def __len(self):
+        return len(self.bh)
+
+    def __sink(self, position):
+        while position*2 < self.__len() and self.bh[position] < self.bh[position * 2]:
+            self.__exchange(position, position * 2)
             position = position*2
 
-    def swim(self, position):
+    def __swim(self, position):
         while int(position/2) >= 1 and self.bh[position] > self.bh[int(position/2)]:
-            self.exchange(position, int(position/2))
+            self.__exchange(position, int(position / 2))
             position = int(position/2)
 
-    def exchange(self, pos1, pos2):
+    def __exchange(self, pos1, pos2):
         aux = self.bh[pos1]
         self.bh[pos1] = self.bh[pos2]
         self.bh[pos2] = aux
