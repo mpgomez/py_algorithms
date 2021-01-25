@@ -1,6 +1,7 @@
-# Algorithms in Python
+# Algorithms and sample problems in Python
 
-Review of simple algorithms and data structures
+Review of simple algorithms and data structures.
+Dumping ground from POCs and sample code.
 
 ## Disclaimer
 This code is meant for learning purposes only.
